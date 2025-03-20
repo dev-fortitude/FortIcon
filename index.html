@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortIcon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            user-select: none;
+        }
+        body {
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #1e1e1e;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: #333;
+            padding: 8px;
+            border-radius: 25px;
+            width: 300px;
+        }
+        .search-bar img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        .search-bar input {
+            background: none;
+            border: none;
+            outline: none;
+            color: #fff;
+            flex-grow: 1;
+        }
+        .icons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 10px;
+            flex-grow: 1;
+        }
+        .icon-box {
+            width: calc(98% / 8);
+            aspect-ratio: 1 / 1;
+            background: #1e1e1e;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .icon-box img {
+            width: 60%;
+            height: auto;
+            object-fit: contain;
+            filter: invert(1);
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #181818;
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 350px;
+            display: none;
+            text-align: center;
+        }
+        .popup h4 {
+            margin-bottom: 5px;
+        }
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        #iconCanvas {
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: 15px auto;
+            background: black;
+            border-radius: 10px;
+        }
+        .custom-btn, .custom-dropdown {
+            padding: 10px;
+            background: lightgray;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        .custom-dropdown {
+            appearance: none;
+            width: 100px;
+            text-align: center;
+        }
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            background: #1e1e1e;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h4>FortIcon</h4>
+        <div class="search-bar">
+            <img src="#" alt="Search">
+            <input type="text" id="search" placeholder="Search icons...">
+        </div>
+    </nav>
+
+    <div class="icons-container" id="icons">
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+                <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+        <div class="icon-box" data-name="#">
+            <img src="#" alt="#">
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <img src="close-icon.png" alt="X" class="close-btn" onclick="closePopup()">
+        <h4>Customise</h4>
+        <p>Don't forget to credit this site!</p>
+        <canvas id="iconCanvas"></canvas>
+        <button class="custom-btn" onclick="openColorPicker()">Colour</button>
+        <input type="color" id="color-picker" style="display: none;" onchange="changeIconColor(this.value)">
+        <select id="icon-size" class="custom-dropdown">
+            <option value="20">20px</option>
+            <option value="48">48px</option>
+            <option value="56">56px</option>
+            <option value="64">64px</option>
+            <option value="128">128px</option>
+            <option value="256">256px</option>
+            <option value="512">512px</option>
+            <option value="1024">1024px</option>
+        </select>
+        <button class="custom-btn" onclick="downloadIcon()">Download</button>
+    </div>
+
+    <footer class="footer">
+        <p>© FortIcon 2025, all rights reserved.</p>
+    </footer>
+
+    <script>
+        let selectedIcon = "";
+        let selectedColor = "#ffffff";
+
+        document.querySelectorAll(".icon-box").forEach(icon => {
+            icon.addEventListener("click", function () {
+                selectedIcon = this.querySelector("img").src;
+                selectedColor = "#ffffff";
+
+                let canvas = document.getElementById("iconCanvas");
+                let ctx = canvas.getContext("2d");
+                let img = new Image();
+                img.src = selectedIcon;
+                img.onload = function () {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                };
+
+                document.getElementById("iconCanvas").style.background = "black";
+                document.getElementById("popup").style.display = "block";
+            });
+        });
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function openColorPicker() {
+            document.getElementById("color-picker").click();
+        }
+
+        function changeIconColor(color) {
+            selectedColor = color;
+            let canvas = document.getElementById("iconCanvas");
+            let ctx = canvas.getContext("2d");
+            let img = new Image();
+            img.src = selectedIcon;
+            img.onload = function () {
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0);
+
+                ctx.globalCompositeOperation = "source-atop";
+                ctx.fillStyle = color;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = "source-over";
+
+                let brightness = parseInt(color.substring(1, 3), 16);
+                document.getElementById("iconCanvas").style.background = brightness > 128 ? "black" : "white";
+            };
+        }
+
+        function downloadIcon() {
+            let canvas = document.getElementById("iconCanvas");
+            let link = document.createElement("a");
+            link.href = canvas.toDataURL("image/png");
+            link.download = "forticon.png";
+            link.click();
+        }
+
+        document.getElementById("search").addEventListener("input", function () {
+            let searchQuery = this.value.toLowerCase();
+            document.querySelectorAll(".icon-box").forEach(icon => {
+                let iconName = icon.getAttribute("data-name").toLowerCase();
+                icon.style.display = iconName.includes(searchQuery) ? "flex" : "none";
+            });
+        });
+    </script>
+
+</body>
+</html>
