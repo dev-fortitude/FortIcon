@@ -69,7 +69,6 @@
             width: 60%;
             height: auto;
             object-fit: contain;
-            filter: invert(1);
         }
         .popup {
             position: fixed;
@@ -89,6 +88,8 @@
         }
         .popup .close-btn {
             position: absolute;
+            width: 20px;
+            height: 20px;
             top: 10px;
             right: 10px;
             cursor: pointer;
@@ -121,6 +122,22 @@
             background: #1e1e1e;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-icons img {
+            width: 28px;
+            height: 28px;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-icons img:hover {
+    opacity: 0.7;
         }
     </style>
 </head>
@@ -129,53 +146,53 @@
     <nav>
         <h4>FortIcon</h4>
         <div class="search-bar">
-            <img src="#" alt="Search">
+            <img src="interface/search.png" alt="Search">
             <input type="text" id="search" placeholder="Search icons...">
         </div>
     </nav>
 
     <div class="icons-container" id="icons">
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-1.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-2.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-3.png" alt="#">
         </div>
-                <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+                <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-4.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-5.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-6.png" alt="#">
         </div>
-                <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+                <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-7.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-8.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-9.png" alt="#">
         </div>
-                <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+                <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-10.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-11.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-12.png" alt="#">
         </div>
-                <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+                <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-13.png" alt="#">
         </div>
-        <div class="icon-box" data-name="#">
-            <img src="#" alt="#">
+        <div class="icon-box" data-name="Home, House, Building, Main, Index, Begin, Default">
+            <img src="icons/home-14.png" alt="#">
         </div>
         <div class="icon-box" data-name="#">
             <img src="#" alt="#">
@@ -246,7 +263,7 @@
     </div>
 
     <div class="popup" id="popup">
-        <img src="close-icon.png" alt="X" class="close-btn" onclick="closePopup()">
+        <img src="interface/close.png" alt="X" class="close-btn" onclick="closePopup()">
         <h4>Customise</h4>
         <p>Don't forget to credit this site!</p>
         <canvas id="iconCanvas"></canvas>
@@ -266,7 +283,15 @@
     </div>
 
     <footer class="footer">
-        <p>© FortIcon 2025, all rights reserved.</p>
+     <p>© FortIcon 2025, all rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://instagram.com/eclipse.developer" target="_blank">
+            <img src="interface/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://github.com/dev-fortitude" target="_blank">
+            <img src="interface/github.png" alt="GitHub">
+        </a>
+     </div>
     </footer>
 
     <script>
